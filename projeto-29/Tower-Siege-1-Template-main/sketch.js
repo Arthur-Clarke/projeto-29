@@ -25,7 +25,7 @@ function setup() {
 
   World.add(world,polygon);
   
-  slingShot = new SlingShot(polygon.body,{x:100,y:200});
+  slingShot = new SlingShot(polygon,{x:100,y:200});
 
   //level one
   block1 = new Block(300,275,30,40);
@@ -112,7 +112,7 @@ function draw() {
 
 }
 function mouseDragged() {
-	Matter.Body.setPosition(polygon.body, {x:mouseX, y:mouseY});
+	Matter.Body.setPosition(polygon, {x:mouseX, y:mouseY});
 }
 
 function mouseReleased() {
@@ -121,7 +121,7 @@ function mouseReleased() {
 
 function keyPressed() {
   if(keyCode === 32){
-    Matter.Body.setPosition(polygon.body, {x:50,y:200});
-    slingShot.attach(polygon.body);
+    Matter.Body.setPosition(polygon, {x:50,y:200});
+    slingShot.attach(polygon);
   }
 }
